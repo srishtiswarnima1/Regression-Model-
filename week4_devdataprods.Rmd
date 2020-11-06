@@ -1,0 +1,55 @@
+---
+title: "Pitch for Shiny App"
+author: "srishtiS"
+date: "06/11/2020"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction 
+I have used the dataset mtcars.csv from the dataset library of Rstudio. 
+if you don't have it then install using 
+
+```{r echo = TRUE, message=FALSE, warning=FALSE}
+install.packages("datasets")
+```
+
+
+and then add the required library before using the dataset 
+
+```{r echo = TRUE}
+library(datasets)
+data("mtcars")
+```
+
+## Check out the headers and the values
+
+```{r echo = TRUE}
+head(mtcars)
+```
+
+
+
+## Do Exploratory Analysis
+
+```{r cars, echo = TRUE}
+summary(mtcars)
+```
+
+mpg is Miles per Gallon and the other 10 variables affect the MPG 
+
+## Usage of the App 
+
+The App gives you a boxplot for mpg vs the 10 variables. For eg below is the plot for Mode vs MPG and you can notice that the Manual Mode is much economical. 
+
+``` {r echo = FALSE, message = FALSE, warning = FALSE}
+boxplot(mpg ~ am, data = mtcars,
+        col = c("blue", "yellow"),
+        ylab = "Miles per Gallon (mpg)",
+        main = "MPG by Transmission Type")
+```
+
+
